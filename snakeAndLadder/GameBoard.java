@@ -35,13 +35,15 @@ public class GameBoard {
                 System.out.println(player.getPlayerName() + " won the game ");
             else {
                 int[] nextPosition = new int[1];
-                boolean[] b = new boolean[1];
+                boolean[] b = new boolean[2];
                 nextPosition[0] = nextCell;
                 snakes.forEach(v -> {
-                    if (v.startPoint == nextCell)
+                    if (v.startPoint == nextCell) {
                         nextPosition[0] = v.endPoint;
+                        b[1] = true;
+                    }
                 });
-                if (nextPosition[0] != nextCell)
+                if (nextPosition[0] != nextCell && b[1])
                     System.out.println(player.getPlayerName() + " rolled a " + diceValue + " and moved from "
                             + currentPosition + " to " + nextCell);
 
@@ -60,8 +62,13 @@ public class GameBoard {
                     System.out.println(player.getPlayerName() + " won the game");
                 else {
                     playerCurrentPosition.put(player.getPlayerName(), nextPosition[0]);
-                    System.out.println(player.getPlayerName() + " rolled a " + diceValue + " and moved from "
-                            + currentPosition + " to " + nextCell);
+                    if (b[0] || b[1]) {
+                        System.out.println(player.getPlayerName() + " rolled a " + diceValue + " and moved from "
+                                + nextCell + " to " + nextPosition[0]);
+                    } else {
+                        System.out.println(player.getPlayerName() + " rolled a " + diceValue + " and moved from "
+                                + currentPosition + " to " + nextCell);
+                    }
                     nextTurn.offer(player);
                 }
             }
