@@ -4,16 +4,16 @@ questions related to machine coding round
 
 # InputExample
 
-2 - no of snakes
-10 - start point
-2 - end point
-99 - start point
-12 - end point
-2 - no of ladders
-5 - start point
-25 - end point
-40 - start point
-89 - end point
-2 - no of players
-albert - player one name
-pitross - player two name
+<p>2 - no of snakes</p>
+<p>10 - start point</p>
+<p>2 - end point</p>
+<p>99 - start point</p>
+<p>12 - end point</p>
+<p>2 - no of ladders</p>
+<p>5 - start point</p>
+<p>25 - end point</p>
+<p>40 - start point</p>
+<p>89 - end point</p>
+<p>2 - no of players</p>
+<p>albert - player one name</p>
+<p>pitross - player two name</p>
